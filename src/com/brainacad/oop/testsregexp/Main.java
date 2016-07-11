@@ -23,13 +23,16 @@ public class Main {
 
         String template;
 
-        template = "[A-Z]\\w{1}\\w[a-z][^0-9]*";
+        //template = "[A-Z]\\w{1}\\w[a-z][^0-9]*";
+        template = "[A-Z]{1}[a-z][^A-Z]*";
 
         Pattern pattern = Pattern.compile(template);
         Matcher matcher = pattern.matcher(userNameString);
         if (matcher.matches()) {
             return true;
-        } else return false;
+        } else {
+            return false;
+        }
     }
 
 }
